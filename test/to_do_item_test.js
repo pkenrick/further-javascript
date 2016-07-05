@@ -4,6 +4,7 @@ var ToDoItem = require("../models/toDoItem");
 var toDoItem;
 
 describe ("ToDoItem", function() {
+  
   beforeEach(function() {
     toDoItem = new ToDoItem();
   });

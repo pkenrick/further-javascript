@@ -1,5 +1,5 @@
-function ToDoItem() {
-  this.task = "";
+function ToDoItem(task) {
+  this.task = typeof task === 'undefined' ? "" : task;
   this.isComplete = false;
 };
 
@@ -18,5 +18,6 @@ ToDoItem.prototype.complete = function() {
 ToDoItem.prototype.checkComplete = function() {
   return this.isComplete;
 };
+
 module.exports = ToDoItem
 
