@@ -2,8 +2,8 @@ function ToDoList(){
   this.itemList = [];
 }
 
-// ToDoList.prototype.itemList = function(){
-//   return [];
-// };
+ToDoList.prototype.addTask = function(task){
+  this.itemList.push(new ToDoItem(task));
+};
 
 module.exports = ToDoList;

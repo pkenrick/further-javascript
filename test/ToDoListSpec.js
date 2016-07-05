@@ -1,5 +1,5 @@
 var expect = require("chai").expect;
-var ToDoList = require("../src/todolist");
+var ToDoList = require("../src/ToDoList");
 
 describe('To Do List', function() {
 
@@ -8,6 +8,10 @@ describe('To Do List', function() {
     expect(toDoList.itemList).to.be.empty;
   });
 
-  it('stores a new task')
+  it('stores a new task', function() {
+    var toDoList = new ToDoList();
+    toDoList.addTask('Eat breakfast');
+    expect(toDoList.task).to.equal('Eat breakfast');
+  });
 
 });
