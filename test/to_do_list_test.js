@@ -15,8 +15,16 @@ describe ("ToDoList", function() {
 
   describe ("#addTask", function() {
     it("adds a new to do object to the to do list", function() {
-      toDoList.addTask("Eat breakfast")
+      toDoList.addTask("Eat breakfast");
       expect(toDoList.tasks[0].task).to.equal("Eat breakfast")
+    });
+  });
+
+  describe ("#display", function() {
+    it("displays a to do list in html format", function() {
+      toDoList.addTask("Eat breakfast");
+      toDoList.addTask("Eat lunch");
+      expect(toDoList.display()).to.equal("<ul><li><div>Eat breakfast</div></li><li><div>Eat lunch</div></li></ul>");
     });
   });
 
