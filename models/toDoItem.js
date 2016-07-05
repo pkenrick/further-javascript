@@ -1,0 +1,22 @@
+function ToDoItem() {
+  this.task = "";
+  this.isComplete = false;
+};
+
+ToDoItem.prototype.setTask = function(task) {
+  this.task = task;
+};
+
+ToDoItem.prototype.getTask = function() {
+  return this.task;
+};
+
+ToDoItem.prototype.complete = function() {
+  this.isComplete = true;
+};
+
+ToDoItem.prototype.checkComplete = function() {
+  return this.isComplete;
+};
+module.exports = ToDoItem
+
