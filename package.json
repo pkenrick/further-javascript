@@ -4,8 +4,7 @@
   "description": "Makers week 7",
   "main": "index.js",
   "scripts": {
-    // "": "echo \"Error: no test specified\" && exit 1"
-    "test": "mocha tests/to_do_test.js"
+    "test": "mocha --recursive"
   },
   "repository": {
     "type": "git",
@@ -15,7 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^3.5.0",
+    "http-server": "^0.9.0",
     "mocha": "^2.5.3",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "zombie": "^4.2.1"
   }
 }
