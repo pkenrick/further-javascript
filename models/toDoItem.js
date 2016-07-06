@@ -1,3 +1,5 @@
+(function(exports){
+
   function ToDoItem(task) {
     this.task = typeof task === 'undefined' ? "" : task;
     this.isComplete = false;
@@ -19,4 +21,6 @@
     return this.isComplete;
   };
 
-  module.exports = ToDoItem;
+  exports.ToDoItem = ToDoItem;
+
+})(this);
