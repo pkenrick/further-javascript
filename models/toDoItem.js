@@ -1,23 +1,22 @@
-function ToDoItem(task) {
-  this.task = typeof task === 'undefined' ? "" : task;
-  this.isComplete = false;
-};
+  function ToDoItem(task) {
+    this.task = typeof task === 'undefined' ? "" : task;
+    this.isComplete = false;
+  };
 
-ToDoItem.prototype.setTask = function(task) {
-  this.task = task;
-};
+  ToDoItem.prototype.setTask = function(task) {
+    this.task = task;
+  };
 
-ToDoItem.prototype.getTask = function() {
-  return this.task;
-};
+  ToDoItem.prototype.getTask = function() {
+    return this.task;
+  };
 
-ToDoItem.prototype.complete = function() {
-  this.isComplete = true;
-};
+  ToDoItem.prototype.complete = function() {
+    this.isComplete = true;
+  };
 
-ToDoItem.prototype.checkComplete = function() {
-  return this.isComplete;
-};
+  ToDoItem.prototype.checkComplete = function() {
+    return this.isComplete;
+  };
 
-module.exports = ToDoItem
-
+  module.exports = ToDoItem;
