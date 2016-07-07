@@ -1,13 +1,11 @@
 var toDoList =  new ToDoList();
 toDoList.addTask(ToDoItem, "Go shopping");
-// toDoList.addTask(ToDoItem, "Make lunch");
-
 
 document.getElementById('list').innerHTML = toDoList.display();
 
-var el = document.getElementById('addTask')
-
-document.getElementById('addButton').addEventListener('click', function (evt) {
-  console.log(el.textInput.value);
+document.getElementById('addTaskButton').addEventListener('click', function (evt) {
   evt.preventDefault();
+  toDoList.addTask(ToDoItem, document.getElementById('addTaskInput').value);
+  document.getElementById('list').innerHTML = toDoList.display();
+  // console.log(document.getElementById('addTaskInput').value);
 });

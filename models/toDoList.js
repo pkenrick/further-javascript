@@ -6,8 +6,8 @@
     this.tasks = [];
   }
 
-  ToDoList.prototype.addTask = function(ToDoItem, taskString) {
-    this.tasks.push(new ToDoItem(taskString));
+  ToDoList.prototype.addTask = function(itemConstructor = ToDoItem, taskString) {
+    this.tasks.push(new itemConstructor(taskString));
   };
 
   ToDoList.prototype.display = function() {

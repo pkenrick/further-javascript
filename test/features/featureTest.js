@@ -20,18 +20,13 @@ describe("Interface", function() {
     assert.equal(browser.text('li'), 'Go shopping');
   });
 
-  // it('can submit task then see task displayed', function(done) {
-  //   console.log('1')
-  //   browser.visit('/').then(function(){
-  //         console.log('2')
-  //     browser.fill('task', 'Feed grandma');
-  //     return browser.pressButton('Add Task');
-  //   }).then(function(){
-  //         console.log('3')
-  //     assert(browser.text('#list') === "Feed grandma", "error message");
-  //   }).then(done, done);
-  //       console.log('4')
-  // });
+  it('can submit task then see task displayed', function(done) {
+      browser.fill('task', 'Feed grandma');
+      browser.pressButton('Add Task');
+      // browser.assert.text('li', 'Feed grandma');
+      // assert.equals(browser.query('li'));
+      done();
+  });
   
 
 });
