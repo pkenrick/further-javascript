@@ -6,16 +6,19 @@
     this.tasks = [];
   }
 
-  ToDoList.prototype.addTask = function(itemConstructor = ToDoItem, taskString) {
+  ToDoList.prototype.addTask = function(taskString, itemConstructor = ToDoItem) {
     this.tasks.push(new itemConstructor(taskString));
   };
 
   ToDoList.prototype.display = function() {
-    var returnString = "<ul>";
+    var returnString = "<form id='completeTaskForm' action='/tasks/complete' method='post'><ul>";
+    var i = 0;
     this.tasks.forEach(function(task) {
-      returnString += ("<li><div>"+task.task+"</div></li>");
+      returnString += ("<li><div>" + task.task + ": " + task.completeString + " <input id='completeTaskButton" + i + "' type='submit' value='Complete'/>" + "</div></li>");
+      i += 1;
     });
-    return returnString += "</ul>";
+    // console.log(completeTaskButton);
+    return returnString += "</ul></form>";
   };
 
   exports.ToDoList = ToDoList;

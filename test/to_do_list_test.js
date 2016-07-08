@@ -3,11 +3,15 @@ var sinon = require("sinon");
 var ToDoList = require("../models/toDoList").ToDoList;
 var ToDoItem = require("../models/toDoItem").ToDoItem;
 var toDoList;
+var Stub;
 
 describe ("ToDoList", function() {
 
   beforeEach(function() {
     toDoList = new ToDoList();
+    stubClass = sinon.stub();
+    stubClass.withArgs('Feed grandma').returns({ task: 'Feed grandma', completeString: 'Incomplete' });
+    stubClass.withArgs('Walk dog').returns({ task: 'Walk dog', completeString: 'Incomplete' });
   });
 
   it("object is instantiated with with an array to store to do objects", function() {
@@ -16,19 +20,20 @@ describe ("ToDoList", function() {
   });
 
   describe ("#addTask", function() {
-    it("adds a new to do object to the to do list", function() {
-      var ToDoItemSpy = sinon.spy(ToDoItem);
-      toDoList.addTask(ToDoItemSpy, "This is a spy");
-      expect(ToDoItemSpy.calledWithNew()).to.be.true;
-      expect(toDoList.tasks.length).to.equal(1);
+    it("adds a new to do object to the to do list", function() {  
+      toDoList.addTask("Feed grandma", stubClass);
+      toDoList.addTask("Walk dog", stubClass);
+      expect(toDoList.tasks.length).to.equal(2);
+      expect(toDoList.tasks[0].task).to.equal('Feed grandma');
+      expect(toDoList.tasks[1].task).to.equal('Walk dog');
     });
   });
 
   describe ("#display", function() {
     it("displays a to do list in html format", function() {
-      toDoList.addTask(ToDoItem, "Eat breakfast");
-      toDoList.addTask(ToDoItem, "Eat lunch");
-      expect(toDoList.display()).to.equal("<ul><li><div>Eat breakfast</div></li><li><div>Eat lunch</div></li></ul>");
+      toDoList.addTask("Feed grandma", stubClass);
+      toDoList.addTask("Walk dog",  stubClass);
+      expect(toDoList.display()).to.equal("<form id='completeTaskForm'\ action='/tasks/complete'\ method='post'><ul><li><div>Feed grandma:\ Incomplete <input id='completeTaskButtons' type='submit' value='Complete'/></div></li><li><div>Walk dog:\ Incomplete <input id='completeTaskButtons' type='submit' value='Complete'/></div></li></ul></form>");
     });
   });
 

@@ -1,11 +1,21 @@
 var toDoList =  new ToDoList();
-toDoList.addTask(ToDoItem, "Go shopping");
+toDoList.addTask("Go shopping", ToDoItem);
 
-document.getElementById('list').innerHTML = toDoList.display();
+updateList();
+
+function updateList() {
+  document.getElementById('list').innerHTML = toDoList.display();
+  // document.getElementById('completeTaskButton').addEventListener('click', function(evt){ evt.preventDefault() });
+}
 
 document.getElementById('addTaskButton').addEventListener('click', function (evt) {
   evt.preventDefault();
-  toDoList.addTask(ToDoItem, document.getElementById('addTaskInput').value);
-  document.getElementById('list').innerHTML = toDoList.display();
-  // console.log(document.getElementById('addTaskInput').value);
+  toDoList.addTask(document.getElementById('addTaskInput', ToDoItem).value);
+  updateList();
+  console.log('buttons are ' + document.getElementById('completeTaskButton'));
+});
+
+document.getElementById('completeTaskButton').addEventListener('click', function(evt){ 
+  evt.preventDefault()
+  
 });

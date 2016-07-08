@@ -38,7 +38,7 @@ describe ("ToDoItem", function() {
   describe ("#checkComplete", function() {
     it("checks if taks is completed", function() {
       toDoItem.complete();
-      expect(toDoItem.checkComplete()).to.equal(true);
+      expect(toDoItem.checkComplete()).to.equal('Complete');
     });
   });
 
