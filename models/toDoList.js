@@ -14,10 +14,13 @@
     var returnString = "<form id='completeTaskForm' action='/tasks/complete' method='post'><ul>";
     var i = 0;
     this.tasks.forEach(function(task) {
-      returnString += ("<li><div>" + task.task + ": " + task.completeString + " <input id='completeTaskButton" + i + "' type='submit' value='Complete'/>" + "</div></li>");
+      if (task.complete === false) {
+        returnString += ("<li><div>" + task.text + ": Incomplete <input id='completeTaskButton" + i + "' type='submit' value='Complete'/>" + "</div></li>");
+      } else {
+        returnString += ("<li><div>" + task.text + ": Complete <input id='completeTaskButton" + i + "' type='submit' value='Redo'/>" + "</div></li>");
+      }
       i += 1;
     });
-    // console.log(completeTaskButton);
     return returnString += "</ul></form>";
   };
 

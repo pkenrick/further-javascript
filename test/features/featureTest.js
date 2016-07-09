@@ -34,7 +34,7 @@ describe("Interface", function() {
   it('can click the "complete" button to complete a task', function() {
     browser.fill('task', 'Feed grandma');
     browser.pressButton('Add Task');
-    browser.pressButton('Complete');
+    browser.pressButton('#completeTaskButton1');
     assert.include(browser.text('li'), 'Feed grandma: Complete');
   });
 

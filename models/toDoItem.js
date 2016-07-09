@@ -2,28 +2,33 @@
 
   var idCounter = 0;
 
-  function ToDoItem(task) {
-    this.task = typeof task === 'undefined' ? "" : task;
-    this.isComplete = false;
+  function ToDoItem(text) {
+    this.text = typeof text === 'undefined' ? "" : text;
+    this.complete = false;
     this.completeString = 'Incomplete';
-    this.id = idCounter++;
   };
 
-  ToDoItem.prototype.setTask = function(task) {
-    this.task = task;
+  ToDoItem.prototype.setText = function(text) {
+    this.text = text;
   };
 
-  ToDoItem.prototype.getTask = function() {
-    return this.task;
+  ToDoItem.prototype.getText = function() {
+    return this.text;
   };
 
-  ToDoItem.prototype.complete = function() {
-    this.isComplete = true;
-    this.completeString = 'Complete';
+  ToDoItem.prototype.completeTask = function() {
+    if (this.complete === false) {
+      this.complete = true;
+      this.completeString = 'Complete';
+    } else {
+      this.complete = false;
+      this.completeString = 'Incomplete';
+    }
+
   };
 
   ToDoItem.prototype.checkComplete = function() {
-    if (this.isComplete === true) {
+    if (this.complete === true) {
       return 'Complete';
     } else {
       return 'Incomplete';

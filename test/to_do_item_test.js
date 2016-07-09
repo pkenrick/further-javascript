@@ -9,35 +9,35 @@ describe ("ToDoItem", function() {
     toDoItem = new ToDoItem();
   });
 
-  it("object is instantiated with an empty task and false complete attr", function() {
-    expect(toDoItem.task).to.equal("");
-    expect(toDoItem.isComplete).to.equal(false);
+  it("object is instantiated with an empty text and false complete attr", function() {
+    expect(toDoItem.text).to.equal("");
+    expect(toDoItem.complete).to.equal(false);
   });
 
   describe ("#setTask", function() {
     it("can store a task", function() {
-      toDoItem.setTask("Eat breakfast");
-      expect(toDoItem.task).to.equal("Eat breakfast");
+      toDoItem.setText("Eat breakfast");
+      expect(toDoItem.text).to.equal("Eat breakfast");
     });
   });
 
   describe ("#getTask", function() {
     it("can retrive a task", function() {
-      toDoItem.setTask("Eat breakfast");
-      expect(toDoItem.getTask()).to.equal("Eat breakfast");
+      toDoItem.setText("Eat breakfast");
+      expect(toDoItem.getText()).to.equal("Eat breakfast");
     });
   });
 
   describe ("#complete", function() {
     it("completes a task", function() {
-      toDoItem.complete();
-      expect(toDoItem.isComplete).to.equal(true);
+      toDoItem.completeTask();
+      expect(toDoItem.complete).to.equal(true);
     });
   });
 
   describe ("#checkComplete", function() {
     it("checks if taks is completed", function() {
-      toDoItem.complete();
+      toDoItem.completeTask();
       expect(toDoItem.checkComplete()).to.equal('Complete');
     });
   });
