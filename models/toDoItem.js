@@ -1,7 +1,5 @@
 (function(exports){
 
-  var idCounter = 0;
-
   function ToDoItem(text) {
     this.text = typeof text === 'undefined' ? "" : text;
     this.complete = false;

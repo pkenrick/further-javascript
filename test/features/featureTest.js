@@ -17,8 +17,8 @@ describe("Interface", function() {
     assert.equal(browser.text('title'), 'To Do List');
   });
 
-  it('can see to do list', function() { 
-    assert.equal(browser.text('li'), 'Go shopping: Incomplete');
+  it('can see to do list (pulled from API)', function() { 
+      assert.include(browser.text('li'), 'Go to the bank: Complete');
   });
 
   it('can submit task then see task displayed', function(done) {
