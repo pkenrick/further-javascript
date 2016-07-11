@@ -1,0 +1,49 @@
+html {
+  background-color: burlywood;
+  font-family: 'Slabo 27px', serif;
+}
+
+h1#heading {
+  text-align: center;
+}
+
+form#addTaskForm {
+  width: 200px;
+  margin: 10px auto;
+}
+
+div#flashMessage {
+  text-align: center;
+  color: red;
+  font-size: 12px;
+  margin: 5px;
+}
+
+div#list {
+  width: 500px;
+  margin: 20px auto;
+  border: solid;
+  border-width: 1px;
+  background-color: navajowhite;
+  padding: 10px;
+}
+
+div.taskShownIncomplete {
+  border: solid;
+  border-width: 1px;
+  background-color: lightgrey;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+div.taskShownComplete {
+  border: solid;
+  border-width: 1px;
+  background-color: lightgreen;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+input.completeTaskButtons {
+  float: right;
+}

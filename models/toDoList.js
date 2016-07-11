@@ -9,17 +9,17 @@
   };
 
   ToDoList.prototype.display = function() {
-    var returnString = "<form id='completeTaskForm' action='/tasks/complete' method='post'><ul>";
+    var returnString = "<form id='completeTaskForm' action='/tasks/complete' method='post'>";
     var i = 0;
     this.tasks.forEach(function(task) {
       if (task.complete === false) {
-        returnString += ("<li><div>" + task.text + ": Incomplete <input id='completeTaskButton" + i + "' type='submit' value='Complete'/>" + "</div></li>");
+        returnString += ("<div class='taskShownIncomplete'>" + task.text + ": Incomplete <input class='completeTaskButtons' id='completeTaskButton" + i + "' type='submit' value='Complete'/>" + "</div>");
       } else {
-        returnString += ("<li><div>" + task.text + ": Complete <input id='completeTaskButton" + i + "' type='submit' value='Reopen'/>" + "</div></li>");
+        returnString += ("<div class='taskShownComplete'>" + task.text + ": Complete <input class='completeTaskButtons' id='completeTaskButton" + i + "' type='submit' value='Reopen'/>" + "</div>");
       }
       i += 1;
     });
-    return returnString += "</ul></form>";
+    return returnString += "</form>";
   };
 
   exports.ToDoList = ToDoList;

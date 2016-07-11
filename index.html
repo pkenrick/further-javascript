@@ -1,18 +1,19 @@
 <html>
 <head>
   <title>To Do List</title>
-  
+  <link rel='stylesheet' type='text/css' href='/public/design.css'>
+  <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
 </head>
 
-<h1>To Do List</h1>
+<h1 id='heading'>To Do List</h1>
 
 <body>
 
   <form id='addTaskForm' action='/tasks' method='post'>
     <input id='addTaskInput' type='text' name='task'/>
     <input id='addTaskButton' type='submit' value='Add Task'/>
+    <div id='flashMessage'></div>
   </form>
-
 
   <div id='list'></div>
 </body>
