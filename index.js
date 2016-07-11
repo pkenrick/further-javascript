@@ -16,6 +16,7 @@ document.getElementById('addTaskButton').addEventListener('click', function (evt
 
 document.getElementById('list').addEventListener('click', function(evt){ 
   evt.preventDefault();
+  console.log(toDoList.tasks[evt.target.id.slice(18)]);
   toDoList.tasks[evt.target.id.slice(18)].completeTask();  
   updateList();
 });
