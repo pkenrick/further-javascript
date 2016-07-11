@@ -6,17 +6,20 @@
 
 <h1>To Do List</h1>
 
-<form id='addTaskForm' action='/tasks' method='post'>
-  <input id='addTaskInput' type='text' name='task'/>
-  <input id='addTaskButton' type='submit' value='Add Task'/>
-</form>
-
 <body>
+
+  <form id='addTaskForm' action='/tasks' method='post'>
+    <input id='addTaskInput' type='text' name='task'/>
+    <input id='addTaskButton' type='submit' value='Add Task'/>
+  </form>
+
+
   <div id='list'></div>
 </body>
 
   <script src='models/toDoItem.js'></script>
   <script src='models/toDoList.js'></script>
+  <script src='models/fetchTasksFromApi.js'></script>
   <script src='index.js'></script>
   
   <script>

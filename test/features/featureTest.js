@@ -1,5 +1,4 @@
 var server = require("http-server").createServer();
-// var assert = require('assert');
 var Browser = require('zombie');
 var assert = require('chai').assert;
 
@@ -13,8 +12,9 @@ describe("Interface", function() {
     browser.visit('/', done);
   });
   
-  it('can see title', function() {
+  it('can see title', function(done) {
     assert.equal(browser.text('title'), 'To Do List');
+    done();
   });
 
   it('can see to do list (pulled from API)', function() { 

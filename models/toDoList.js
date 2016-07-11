@@ -1,5 +1,3 @@
-// var ToDoItem = require("../models/toDoItem");
-
 (function(exports){
 
   function ToDoList() {
@@ -17,7 +15,7 @@
       if (task.complete === false) {
         returnString += ("<li><div>" + task.text + ": Incomplete <input id='completeTaskButton" + i + "' type='submit' value='Complete'/>" + "</div></li>");
       } else {
-        returnString += ("<li><div>" + task.text + ": Complete <input id='completeTaskButton" + i + "' type='submit' value='Redo'/>" + "</div></li>");
+        returnString += ("<li><div>" + task.text + ": Complete <input id='completeTaskButton" + i + "' type='submit' value='Reopen'/>" + "</div></li>");
       }
       i += 1;
     });
